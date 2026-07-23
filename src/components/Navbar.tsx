@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Candy, Menu, X, Globe, Phone } from 'lucide-react';
 import { Language, TranslationSet } from '../types';
+import logoIcon from '../../assets/candy-world-logo-icon.png';
 
 interface NavbarProps {
   lang: Language;
@@ -34,7 +35,7 @@ export default function Navbar({ lang, t, toggleLang }: NavbarProps) {
           <div className="flex-shrink-0 flex items-center gap-3">
             <a href="#home" className="flex items-center gap-2 group">
               <div className="p-1 group-hover:rotate-12 transition-transform duration-300">
-                <img src="/assets/candy-world-logo-icon.png" alt="Candy World" className="h-12 w-12 object-contain" id="nav-logo-icon" />
+                <img src={logoIcon} alt="Candy World" className="h-12 w-12 object-contain" id="nav-logo-icon" />
               </div>
               <div className="flex flex-col">
                 <span className="font-display font-bold text-lg leading-tight tracking-tight text-brand-choco-900 group-hover:text-brand-pink-600 transition-colors">
