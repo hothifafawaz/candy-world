@@ -1,0 +1,6 @@
+{
+  "name": "Candy World",
+  "description": "Bilingual (Arabic/English) modern landing page and inquiry system for Candy World, a specialized showroom for local and imported sweets, chocolates, and food products.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

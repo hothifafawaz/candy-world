@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", "Outfit", system-ui, sans-serif;
+  --font-display: "Outfit", "Cairo", system-ui, sans-serif;
+
+  /* Premium appetizing color palette: Professional Polish Theme values */
+  --color-brand-cream: #FFF9F0;
+  --color-brand-pink-50: #FFF5F7;
+  --color-brand-pink-100: #FCE4EC;
+  --color-brand-pink-200: #F8BBD0;
+  --color-brand-pink-500: #F06292;
+  --color-brand-pink-600: #E91E63;
+  --color-brand-pink-700: #C2185B;
+  --color-brand-pink-800: #880E4F;
+  
+  --color-brand-choco-50: #FFF9F0;
+  --color-brand-choco-100: #D7CCC8;
+  --color-brand-choco-200: #B29F9A;
+  --color-brand-choco-800: #5D4037;
+  --color-brand-choco-900: #4A2C2A;
+  
+  --color-brand-gold-50: #FFFDE7;
+  --color-brand-gold-400: #FFE082;
+  --color-brand-gold-500: #FFD54F;
+  --color-brand-gold-600: #FFC107;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-choco-900);
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar to match our sweets brand */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-pink-200);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-pink-500);
+}
+
+::selection {
+  background-color: var(--color-brand-pink-100);
+  color: var(--color-brand-pink-800);
+}
