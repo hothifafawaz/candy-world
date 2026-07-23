@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { translations } from './data/translations';
 import { Language } from './types';
 
@@ -59,6 +60,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col font-sans select-none antialiased selection:bg-brand-pink-100 selection:text-brand-pink-800">
+      <Analytics />
       
       {/* 1. Navbar / Header */}
       <Navbar lang={lang} t={t} toggleLang={toggleLang} />
