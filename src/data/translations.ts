@@ -15,10 +15,10 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
     navContact: 'تواصل معنا',
 
     // Hero Section
-    heroTitle: 'عالم الحلويات الاولى',
+    heroTitle: 'عالم الحلويات الأولى',
     heroSubtitle: 'خيارك الأول لأشهى الحلويات والشوكلاتة والمواد الغذائية بأسعار منافسة وجودة لا تضاهى!',
     heroTagline: 'خصومات مستمرة وعروض مذهلة على تشكيلة واسعة من الحلويات المحلية والعالمية.',
-    heroBadge: '🎉 أهلاً بكم في عالم الحلويات الاولى',
+    heroBadge: '🎉 أهلاً بكم في عالم الحلويات الأولى',
     heroCtaContact: 'تواصل معنا الآن',
     heroCtaOffers: 'استكشف عروضنا',
 
@@ -26,7 +26,7 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
     aboutTitle: 'عن عالم الحلويات',
     aboutSubtitle: 'حكايتنا مع الجودة والتنوع',
     aboutParagraph1: 'بدأت حكاية عالم الحلويات الأولى من شغفٍ بسيط: أن يجد الزائر كل ما يحبه من الحلويات والوجبات الخفيفة والمشروبات في مكان واحد. ومن هذا الشغف وُلد متجر يجمع بين الأصناف المعروفة والمنتجات الجديدة والمستوردة، ليمنح كل زائر تجربة تسوّق ممتعة ومليئة بالاكتشاف.',
-    aboutParagraph2: ' نحرص في عالم الحلويات الأولى على توفير تشكيلة متنوعة تناسب مختلف الأذواق؛ من الشوكولاتة والبسكويت إلى القهوة والمشروبات والمنتجات الخالية من السكر، مع متابعة مستمرة لأحدث المنتجات والنكهات الرائجة.',
+    aboutParagraph2: 'نحرص في عالم الحلويات الأولى على توفير تشكيلة متنوعة تناسب مختلف الأذواق؛ من الشوكولاتة والبسكويت إلى القهوة والمشروبات والمنتجات الخالية من السكر، مع متابعة مستمرة لأحدث المنتجات والنكهات الرائجة.',
     aboutStat1Value: '١٠٠٪',
     aboutStat1Label: 'جودة مضمونة',
     aboutStat2Value: '+١,٥٠٠',
@@ -97,7 +97,7 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
     contactMapTitle: 'موقعنا على الخريطة',
 
     // Footer
-    footerCopyright: 'جميع الحقوق محفوظة © ٢٠٢٦ لعالم الحلويات (Candy World).',
+    footerCopyright: 'جميع الحقوق محفوظة © ٢٠٢٦ لعالم الحلويات الأولى (Candy World).',
     footerRights: 'صمم بكل حب وسكر 🍬'
   },
   en: {
@@ -191,7 +191,7 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
     contactMapTitle: 'Find Us On The Map',
 
     // Footer
-    footerCopyright: 'All Rights Reserved © 2026 Candy World (عالم الحلويات الاولى.',
+    footerCopyright: 'All Rights Reserved © 2026 Candy World (عالم الحلويات الأولى).',
     footerRights: 'Crafted with Love & Sugar 🍬'
   }
 };

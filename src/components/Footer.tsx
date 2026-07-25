@@ -58,7 +58,7 @@ export default function Footer({ t }: FooterProps) {
                 Candy World
               </span>
               <span className="font-sans font-semibold text-xs text-brand-pink-400 leading-none">
-                عالم الحلويات الأولي
+                عالم الحلويات الأولى
               </span>
             </div>
           </div>
