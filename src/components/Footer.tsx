@@ -7,7 +7,7 @@ import React from 'react';
 import { Candy, Instagram, Ghost, MessageCircle, Twitter, Mail } from 'lucide-react';
 import { TranslationSet } from '../types';
 
-const PRIVACY_EMAIL = 'privacy@candyworldsa.com';
+const PRIVACY_EMAIL = 'hothifafawaz1@gmail.com';
 
 interface FooterProps {
   t: TranslationSet;

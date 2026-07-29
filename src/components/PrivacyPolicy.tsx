@@ -26,7 +26,7 @@ interface PrivacyPolicyProps {
   onManageCookiePreferences: () => void;
 }
 
-const PRIVACY_EMAIL = 'privacy@candyworldsa.com';
+const PRIVACY_EMAIL = 'hothifafawaz1@gmail.com';
 
 export default function PrivacyPolicy({
   lang,

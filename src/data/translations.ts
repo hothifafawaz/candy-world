@@ -132,7 +132,7 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
     privacyPurposeBody: 'نستخدم البيانات المذكورة أعلاه حصرياً للرد على استفساراتك حول منتجاتنا وعروضنا وأسعارها والتواصل معك عبر الهاتف أو واتساب أو البريد الإلكتروني بخصوص طلبك. أما بيانات التحليلات فتُستخدم بشكل مجمّع وغير تعريفي لفهم أداء الموقع وتحسين تجربة التصفح. لا نستخدم بياناتك لأي غرض تسويقي آخر دون موافقتك الصريحة.',
 
     privacyRetentionTitle: '3. مدة الاحتفاظ بالبيانات',
-    privacyRetentionBody: 'يتم الاحتفاظ ببيانات نموذج التواصل (الاسم ورقم الجوال ونص الرسالة) لمدة لا تتجاوز 12 شهراً من تاريخ إرسال الاستفسار، وذلك في البريد الإلكتروني الخاص بفريق خدمة العملاء، ثم تُحذف بعد ذلك ما لم يستدعِ الأمر الاحتفاظ بها لمدة أطول للامتثال لالتزام نظامي أو لإتمام تعامل تجاري قائم معك.',
+    privacyRetentionBody: 'يتم الاحتفاظ ببيانات نموذج التواصل (الاسم ورقم الجوال ونص الرسالة) لمدة لا تتجاوز 3 أشهر من تاريخ إرسال الاستفسار، وذلك في البريد الإلكتروني الخاص بفريق خدمة العملاء، ثم تُحذف بعد ذلك ما لم يستدعِ الأمر الاحتفاظ بها لمدة أطول للامتثال لالتزام نظامي أو لإتمام تعامل تجاري قائم معك.',
 
     privacyThirdPartyTitle: '4. مشاركة البيانات ونقلها خارج المملكة',
     privacyThirdPartyIntro: 'لا نبيع بياناتك الشخصية لأي جهة. ومع ذلك، نستعين ببعض مزودي الخدمات التقنية (معالجي بيانات) الذين قد تتم معالجة بياناتك لديهم خارج المملكة العربية السعودية، وفق الضوابط التي يفرضها نظام حماية البيانات الشخصية على النقل عبر الحدود:',
@@ -151,7 +151,7 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
 
     privacyContactTitle: '6. التواصل بخصوص بياناتك',
     privacyContactBody: 'لممارسة أي من الحقوق أعلاه، أو لأي استفسار متعلق بخصوصية بياناتك، يرجى التواصل معنا عبر البريد الإلكتروني التالي وسنعمل على الرد على طلبك في أقرب وقت ممكن:',
-    privacyContactEmailLabel: 'privacy@candyworldsa.com',
+    privacyContactEmailLabel: 'hothifafawaz1@gmail.com',
 
     privacyCookiesTitle: '7. ملفات تعريف الارتباط وأدوات التحليلات',
     privacyCookiesBody: 'نستخدم أداة Vercel Analytics لفهم كيفية تصفح الزوار لموقعنا. لا يتم تفعيل هذه الأداة إلا بعد موافقتك الصريحة عبر شريط التفضيلات الذي يظهر عند أول زيارة لك للموقع، ويمكنك تغيير اختيارك في أي وقت.',
@@ -283,7 +283,7 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
     privacyPurposeBody: 'We use the data above solely to respond to your inquiries about our products, offers, and prices, and to contact you by phone, WhatsApp, or email regarding your request. Analytics data is used in aggregated, non-identifying form to understand site performance and improve the browsing experience. We do not use your data for any other marketing purpose without your explicit consent.',
 
     privacyRetentionTitle: '3. Data Retention Period',
-    privacyRetentionBody: 'Contact form data (name, phone number, and message text) is retained for no longer than 12 months from the date the inquiry was submitted, in the customer service team\'s email inbox, after which it is deleted unless a longer retention period is required to comply with a legal obligation or to complete an ongoing business dealing with you.',
+    privacyRetentionBody: 'Contact form data (name, phone number, and message text) is retained for no longer than 3 months from the date the inquiry was submitted, in the customer service team\'s email inbox, after which it is deleted unless a longer retention period is required to comply with a legal obligation or to complete an ongoing business dealing with you.',
 
     privacyThirdPartyTitle: '4. Data Sharing & Cross-Border Transfer',
     privacyThirdPartyIntro: 'We do not sell your personal data to anyone. However, we rely on certain technical service providers (data processors) who may process your data outside the Kingdom of Saudi Arabia, subject to the cross-border transfer safeguards required by the PDPL:',
@@ -302,7 +302,7 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
 
     privacyContactTitle: '6. Contact Us About Your Data',
     privacyContactBody: 'To exercise any of the rights above, or for any question about the privacy of your data, please contact us at the email below and we will respond to your request as soon as possible:',
-    privacyContactEmailLabel: 'privacy@candyworldsa.com',
+    privacyContactEmailLabel: 'hothifafawaz1@gmail.com',
 
     privacyCookiesTitle: '7. Cookies & Analytics Tools',
     privacyCookiesBody: 'We use Vercel Analytics to understand how visitors browse our website. This tool is only activated after your explicit consent via the preferences banner shown on your first visit, and you can change your choice at any time.',
