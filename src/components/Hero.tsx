@@ -109,7 +109,7 @@ export default function Hero({ lang, t, onInquire }: HeroProps) {
               {/* PLACEHOLDER: Hero Image - replace src below with real candy store showroom photo */}
               <img
                 src={toffifeeImg}
-                alt="Toffifee product"
+                alt={lang === 'ar' ? 'حلوى توفيفي المستوردة في عالم الحلويات' : 'Imported Toffifee sweets at Candy World'}
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
               />

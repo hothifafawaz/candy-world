@@ -138,8 +138,9 @@ export default function Offers({ lang, t, onInquire }: OffersProps) {
               {/* PLACEHOLDER: Promotion image - replace src for user */}
               <img
                 src={promoOffer.image}
-                alt="Big Family Savings Box offer"
+                alt={promoOffer.title}
                 referrerPolicy="no-referrer"
+                loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               {/* Shading gradient over image for seamless blend */}

@@ -93,7 +93,7 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
     contactInfoPhone: 'الهاتف المباشر للجوال / المعرض',
     contactInfoPhoneVal: '+966 50 960 7675',
     contactInfoHours: 'ساعات العمل الرسمية',
-    contactInfoHoursVal: 'يومياً: من 8:00 صباحاً حتى 1:30 مساءً / الجمعة: من 12:30 ظهراً حتى 1:30 مساءً',
+    contactInfoHoursVal: 'يومياً: من 8:00 صباحاً حتى 1:30 صباحاً / الجمعة: من 12:30 ظهراً حتى 1:30 مساءً',
     contactMapTitle: 'موقعنا على الخريطة',
 
     // Footer

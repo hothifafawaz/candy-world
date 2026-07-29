@@ -20,7 +20,7 @@ interface GalleryProps {
 }
 
 export default function Gallery({ lang, t }: GalleryProps) {
-  const [selectedImg, setSelectedImg] = useState<string | null>(null);
+  const [selectedImg, setSelectedImg] = useState<{ src: string; title: string } | null>(null);
 
   const galleryImages = [
     {
@@ -75,7 +75,7 @@ export default function Gallery({ lang, t }: GalleryProps) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
-              onClick={() => setSelectedImg(img.src)}
+              onClick={() => setSelectedImg({ src: img.src, title: img.title })}
               className="group relative aspect-[4/3] rounded-3xl overflow-hidden cursor-pointer shadow-xs hover:shadow-xl border-2 border-white transition-all transform hover:-translate-y-1"
             >
               {/* IMAGE PLACEHOLDER COMMENT */}
@@ -84,6 +84,7 @@ export default function Gallery({ lang, t }: GalleryProps) {
                 src={img.src}
                 alt={img.title}
                 referrerPolicy="no-referrer"
+                loading="lazy"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
               />
               
@@ -129,8 +130,8 @@ export default function Gallery({ lang, t }: GalleryProps) {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={selectedImg}
-                alt="Selected sweet view"
+                src={selectedImg.src}
+                alt={selectedImg.title}
                 referrerPolicy="no-referrer"
                 className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
               />

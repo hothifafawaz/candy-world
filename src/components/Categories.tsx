@@ -123,6 +123,7 @@ export default function Categories({ lang, t, onInquire }: CategoriesProps) {
                   src={cat.image}
                   alt={cat.title}
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
                 {/* Overlay Badge icon */}

@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import showroomImg from '../../assets/showroom.png';
+import showroomImg from '../../assets/showroom.jpg';
 import { Store, Award, Percent, ChevronRight, ChevronLeft } from 'lucide-react';
 import { Language, TranslationSet } from '../types';
 
@@ -58,8 +58,9 @@ export default function About({ lang, t }: AboutProps) {
               {/* PLACEHOLDER: Store shelves photo - replace src with a high resolution showroom photo */}
               <img
                 src={showroomImg}
-                alt="Candy World Sweets Jars"
+                alt={lang === 'ar' ? 'واجهة معرض عالم الحلويات الأولى في بيشة' : 'Candy World showroom storefront in Bisha, Saudi Arabia'}
                 referrerPolicy="no-referrer"
+                loading="lazy"
                 className="w-full h-full object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-choco-900/60 via-transparent to-transparent"></div>
