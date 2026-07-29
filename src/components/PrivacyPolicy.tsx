@@ -11,7 +11,7 @@ import {
   Clock,
   Globe2,
   UserCheck,
-  Mail,
+  MessageCircle,
   Cookie,
   ArrowRight,
   ArrowLeft,
@@ -26,7 +26,7 @@ interface PrivacyPolicyProps {
   onManageCookiePreferences: () => void;
 }
 
-const PRIVACY_EMAIL = 'hothifafawaz1@gmail.com';
+const PRIVACY_WHATSAPP = '966509607675';
 
 export default function PrivacyPolicy({
   lang,
@@ -76,47 +76,22 @@ export default function PrivacyPolicy({
       icon: <Globe2 className="h-5 w-5" />,
       title: t.privacyThirdPartyTitle,
       body: (
-        <>
-          <p className="font-sans text-sm sm:text-base text-brand-choco-800/90 leading-relaxed">
-            {t.privacyThirdPartyIntro}
-          </p>
-          <div className="mt-4 space-y-3">
-            <div className="rounded-2xl border border-brand-pink-100 bg-brand-pink-50/40 p-4">
-              <p className="font-sans font-bold text-sm text-brand-choco-900">{t.privacyThirdPartyWeb3FormsName}</p>
-              <p className="font-sans text-xs sm:text-sm text-brand-choco-800/80 leading-relaxed mt-1">
-                {t.privacyThirdPartyWeb3FormsDetail}
-              </p>
-            </div>
-            <div className="rounded-2xl border border-brand-pink-100 bg-brand-pink-50/40 p-4">
-              <p className="font-sans font-bold text-sm text-brand-choco-900">{t.privacyThirdPartyVercelName}</p>
-              <p className="font-sans text-xs sm:text-sm text-brand-choco-800/80 leading-relaxed mt-1">
-                {t.privacyThirdPartyVercelDetail}
-              </p>
-            </div>
-          </div>
-        </>
+        <p className="font-sans text-sm sm:text-base text-brand-choco-800/90 leading-relaxed">
+          {t.privacyThirdPartyIntro}
+        </p>
       ),
     },
     {
       icon: <UserCheck className="h-5 w-5" />,
       title: t.privacyRightsTitle,
       body: (
-        <>
-          <p className="font-sans text-sm sm:text-base text-brand-choco-800/90 leading-relaxed">
-            {t.privacyRightsIntro}
-          </p>
-          <ul className="mt-3 space-y-2 list-disc ps-5 font-sans text-sm sm:text-base text-brand-choco-800/90 leading-relaxed">
-            <li>{t.privacyRightAccess}</li>
-            <li>{t.privacyRightCorrection}</li>
-            <li>{t.privacyRightDeletion}</li>
-            <li>{t.privacyRightWithdraw}</li>
-            <li>{t.privacyRightComplaint}</li>
-          </ul>
-        </>
+        <p className="font-sans text-sm sm:text-base text-brand-choco-800/90 leading-relaxed">
+          {t.privacyRightsIntro}
+        </p>
       ),
     },
     {
-      icon: <Mail className="h-5 w-5" />,
+      icon: <MessageCircle className="h-5 w-5" />,
       title: t.privacyContactTitle,
       body: (
         <>
@@ -124,11 +99,13 @@ export default function PrivacyPolicy({
             {t.privacyContactBody}
           </p>
           <a
-            href={`mailto:${PRIVACY_EMAIL}`}
+            href={`https://wa.me/${PRIVACY_WHATSAPP}`}
+            target="_blank"
+            rel="noopener noreferrer"
             dir="ltr"
             className="inline-block mt-3 font-sans font-bold text-sm sm:text-base text-brand-pink-600 hover:text-brand-pink-700 transition-colors"
           >
-            {t.privacyContactEmailLabel}
+            {t.privacyContactWhatsAppLabel}
           </a>
         </>
       ),

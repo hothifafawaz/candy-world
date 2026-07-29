@@ -100,7 +100,7 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
     footerCopyright: 'جميع الحقوق محفوظة © ٢٠٢٦ لعالم الحلويات الأولى (Candy World).',
     footerRights: 'صمم بكل حب وسكر 🍬',
     footerPrivacyLink: 'سياسة الخصوصية',
-    footerPrivacyEmailLabel: 'لطلبات الخصوصية وبياناتك الشخصية:',
+    footerPrivacyWhatsAppLabel: 'لطلبات الخصوصية وبياناتك الشخصية:',
     footerCookiePrefsLink: 'تفضيلات ملفات تعريف الارتباط',
 
     // Contact form - consent checkbox
@@ -135,23 +135,14 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
     privacyRetentionBody: 'يتم الاحتفاظ ببيانات نموذج التواصل (الاسم ورقم الجوال ونص الرسالة) لمدة لا تتجاوز 3 أشهر من تاريخ إرسال الاستفسار، وذلك في البريد الإلكتروني الخاص بفريق خدمة العملاء، ثم تُحذف بعد ذلك ما لم يستدعِ الأمر الاحتفاظ بها لمدة أطول للامتثال لالتزام نظامي أو لإتمام تعامل تجاري قائم معك.',
 
     privacyThirdPartyTitle: '4. مشاركة البيانات ونقلها خارج المملكة',
-    privacyThirdPartyIntro: 'لا نبيع بياناتك الشخصية لأي جهة. ومع ذلك، نستعين ببعض مزودي الخدمات التقنية (معالجي بيانات) الذين قد تتم معالجة بياناتك لديهم خارج المملكة العربية السعودية، وفق الضوابط التي يفرضها نظام حماية البيانات الشخصية على النقل عبر الحدود:',
-    privacyThirdPartyWeb3FormsName: 'Web3Forms — لاستقبال وتحويل رسائل نموذج التواصل',
-    privacyThirdPartyWeb3FormsDetail: 'يُستخدم لمعالجة وإرسال رسالتك (الاسم ورقم الجوال والرسالة) إلى بريد فريق خدمة العملاء لدينا. قد تتم معالجة هذه البيانات على خوادم تقع خارج المملكة العربية السعودية.',
-    privacyThirdPartyVercelName: 'Vercel Analytics (شركة Vercel Inc., الولايات المتحدة الأمريكية) — لتحليلات الاستخدام',
-    privacyThirdPartyVercelDetail: 'يُستخدم فقط بعد موافقتك عبر شريط تفضيلات ملفات تعريف الارتباط، لجمع بيانات استخدام مجمّعة وغير تعريفية بهدف تحسين أداء الموقع. تتم معالجة هذه البيانات على خوادم تقع خارج المملكة العربية السعودية.',
+    privacyThirdPartyIntro: 'لا نبيع بياناتك الشخصية لأي جهة. ومع ذلك، نستعين ببعض مزودي الخدمات التقنية الذين قد تتم معالجة بياناتك لديهم خارج المملكة العربية السعودية، وفق الضوابط التي يفرضها نظام حماية البيانات الشخصية على النقل عبر الحدود.',
 
-    privacyRightsTitle: '5. حقوقك تجاه بياناتك الشخصية',
-    privacyRightsIntro: 'بموجب نظام حماية البيانات الشخصية، يحق لك ما يلي:',
-    privacyRightAccess: 'الاطّلاع على بياناتك الشخصية التي نحتفظ بها والحصول على نسخة منها.',
-    privacyRightCorrection: 'طلب تصحيح أو تحديث أي بيانات غير دقيقة أو غير مكتملة.',
-    privacyRightDeletion: 'طلب حذف بياناتك الشخصية متى ما لم يعد هناك مسوغ نظامي للاحتفاظ بها.',
-    privacyRightWithdraw: 'سحب موافقتك على معالجة بياناتك في أي وقت، بما في ذلك موافقتك على أداة التحليلات.',
-    privacyRightComplaint: 'تقديم شكوى إلى الهيئة السعودية للبيانات والذكاء الاصطناعي (SDAIA) في حال اعتقادك أن معالجة بياناتك تخالف النظام.',
+    privacyRightsTitle: '5. حقوقك',
+    privacyRightsIntro: 'لديك الحقوق المكفولة لك بموجب نظام حماية البيانات الشخصية (PDPL) فيما يتعلق ببياناتك الشخصية.',
 
     privacyContactTitle: '6. التواصل بخصوص بياناتك',
-    privacyContactBody: 'لممارسة أي من الحقوق أعلاه، أو لأي استفسار متعلق بخصوصية بياناتك، يرجى التواصل معنا عبر البريد الإلكتروني التالي وسنعمل على الرد على طلبك في أقرب وقت ممكن:',
-    privacyContactEmailLabel: 'hothifafawaz1@gmail.com',
+    privacyContactBody: 'لأي استفسار متعلق بخصوصية بياناتك، يرجى التواصل معنا عبر واتساب:',
+    privacyContactWhatsAppLabel: '+966 50 960 7675',
 
     privacyCookiesTitle: '7. ملفات تعريف الارتباط وأدوات التحليلات',
     privacyCookiesBody: 'نستخدم أداة Vercel Analytics لفهم كيفية تصفح الزوار لموقعنا. لا يتم تفعيل هذه الأداة إلا بعد موافقتك الصريحة عبر شريط التفضيلات الذي يظهر عند أول زيارة لك للموقع، ويمكنك تغيير اختيارك في أي وقت.',
@@ -251,7 +242,7 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
     footerCopyright: 'All Rights Reserved © 2026 Candy World (عالم الحلويات الأولى).',
     footerRights: 'Crafted with Love & Sugar 🍬',
     footerPrivacyLink: 'Privacy Policy',
-    footerPrivacyEmailLabel: 'For privacy requests about your data:',
+    footerPrivacyWhatsAppLabel: 'For privacy requests about your data:',
     footerCookiePrefsLink: 'Cookie Preferences',
 
     // Contact form - consent checkbox
@@ -286,23 +277,14 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
     privacyRetentionBody: 'Contact form data (name, phone number, and message text) is retained for no longer than 3 months from the date the inquiry was submitted, in the customer service team\'s email inbox, after which it is deleted unless a longer retention period is required to comply with a legal obligation or to complete an ongoing business dealing with you.',
 
     privacyThirdPartyTitle: '4. Data Sharing & Cross-Border Transfer',
-    privacyThirdPartyIntro: 'We do not sell your personal data to anyone. However, we rely on certain technical service providers (data processors) who may process your data outside the Kingdom of Saudi Arabia, subject to the cross-border transfer safeguards required by the PDPL:',
-    privacyThirdPartyWeb3FormsName: 'Web3Forms — to receive and forward contact form messages',
-    privacyThirdPartyWeb3FormsDetail: 'Used to process and deliver your message (name, phone number, and message) to our customer service inbox. This data may be processed on servers located outside Saudi Arabia.',
-    privacyThirdPartyVercelName: 'Vercel Analytics (Vercel Inc., United States) — for usage analytics',
-    privacyThirdPartyVercelDetail: 'Used only after you consent via the cookie/tracking preferences banner, to collect aggregated, non-identifying usage data to improve site performance. This data is processed on servers located outside Saudi Arabia.',
+    privacyThirdPartyIntro: 'We do not sell your personal data to anyone. However, we work with certain technical service providers who may process your data outside the Kingdom of Saudi Arabia, in accordance with the cross-border transfer rules set by the Personal Data Protection Law (PDPL).',
 
-    privacyRightsTitle: '5. Your Rights Over Your Personal Data',
-    privacyRightsIntro: 'Under the Personal Data Protection Law, you have the right to:',
-    privacyRightAccess: 'Access the personal data we hold about you and receive a copy of it.',
-    privacyRightCorrection: 'Request correction or updating of any inaccurate or incomplete data.',
-    privacyRightDeletion: 'Request deletion (erasure) of your personal data once there is no longer a legal basis to retain it.',
-    privacyRightWithdraw: 'Withdraw your consent to the processing of your data at any time, including your consent to analytics tracking.',
-    privacyRightComplaint: 'File a complaint with the Saudi Data & Artificial Intelligence Authority (SDAIA) if you believe your data has been processed in violation of the law.',
+    privacyRightsTitle: '5. Your Rights',
+    privacyRightsIntro: 'You have the rights granted to you under the Personal Data Protection Law (PDPL) regarding your personal data.',
 
     privacyContactTitle: '6. Contact Us About Your Data',
-    privacyContactBody: 'To exercise any of the rights above, or for any question about the privacy of your data, please contact us at the email below and we will respond to your request as soon as possible:',
-    privacyContactEmailLabel: 'hothifafawaz1@gmail.com',
+    privacyContactBody: 'For any question about the privacy of your data, please contact us via WhatsApp:',
+    privacyContactWhatsAppLabel: '+966 50 960 7675',
 
     privacyCookiesTitle: '7. Cookies & Analytics Tools',
     privacyCookiesBody: 'We use Vercel Analytics to understand how visitors browse our website. This tool is only activated after your explicit consent via the preferences banner shown on your first visit, and you can change your choice at any time.',

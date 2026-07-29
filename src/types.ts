@@ -99,7 +99,7 @@ export interface TranslationSet {
   footerCopyright: string;
   footerRights: string;
   footerPrivacyLink: string;
-  footerPrivacyEmailLabel: string;
+  footerPrivacyWhatsAppLabel: string;
   footerCookiePrefsLink: string;
 
   // Contact form - consent checkbox
@@ -135,22 +135,13 @@ export interface TranslationSet {
 
   privacyThirdPartyTitle: string;
   privacyThirdPartyIntro: string;
-  privacyThirdPartyWeb3FormsName: string;
-  privacyThirdPartyWeb3FormsDetail: string;
-  privacyThirdPartyVercelName: string;
-  privacyThirdPartyVercelDetail: string;
 
   privacyRightsTitle: string;
   privacyRightsIntro: string;
-  privacyRightAccess: string;
-  privacyRightCorrection: string;
-  privacyRightDeletion: string;
-  privacyRightWithdraw: string;
-  privacyRightComplaint: string;
 
   privacyContactTitle: string;
   privacyContactBody: string;
-  privacyContactEmailLabel: string;
+  privacyContactWhatsAppLabel: string;
 
   privacyCookiesTitle: string;
   privacyCookiesBody: string;
