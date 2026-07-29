@@ -98,6 +98,63 @@ export interface TranslationSet {
   // Footer
   footerCopyright: string;
   footerRights: string;
+  footerPrivacyLink: string;
+  footerPrivacyEmailLabel: string;
+  footerCookiePrefsLink: string;
+
+  // Contact form - consent checkbox
+  contactConsentPrefix: string;
+  contactConsentLinkText: string;
+  contactConsentSuffix: string;
+
+  // Cookie / tracking consent banner
+  cookieBannerTitle: string;
+  cookieBannerMessage: string;
+  cookieBannerAccept: string;
+  cookieBannerReject: string;
+  cookieBannerPolicyLinkText: string;
+
+  // Privacy Policy page
+  privacyPageTitle: string;
+  privacyBackHome: string;
+  privacyLastUpdated: string;
+  privacyIntro: string;
+
+  privacyDataCollectedTitle: string;
+  privacyDataCollectedIntro: string;
+  privacyDataItemName: string;
+  privacyDataItemPhone: string;
+  privacyDataItemMessage: string;
+  privacyDataItemAnalytics: string;
+
+  privacyPurposeTitle: string;
+  privacyPurposeBody: string;
+
+  privacyRetentionTitle: string;
+  privacyRetentionBody: string;
+
+  privacyThirdPartyTitle: string;
+  privacyThirdPartyIntro: string;
+  privacyThirdPartyWeb3FormsName: string;
+  privacyThirdPartyWeb3FormsDetail: string;
+  privacyThirdPartyVercelName: string;
+  privacyThirdPartyVercelDetail: string;
+
+  privacyRightsTitle: string;
+  privacyRightsIntro: string;
+  privacyRightAccess: string;
+  privacyRightCorrection: string;
+  privacyRightDeletion: string;
+  privacyRightWithdraw: string;
+  privacyRightComplaint: string;
+
+  privacyContactTitle: string;
+  privacyContactBody: string;
+  privacyContactEmailLabel: string;
+
+  privacyCookiesTitle: string;
+  privacyCookiesBody: string;
+  privacyCookiesManageBtn: string;
 }
 
 export interface Product {

@@ -4,11 +4,15 @@
  */
 
 import React from 'react';
-import { Candy, Instagram, Ghost, MessageCircle, Twitter } from 'lucide-react';
+import { Candy, Instagram, Ghost, MessageCircle, Twitter, Mail } from 'lucide-react';
 import { TranslationSet } from '../types';
+
+const PRIVACY_EMAIL = 'privacy@candyworldsa.com';
 
 interface FooterProps {
   t: TranslationSet;
+  onNavigatePrivacy?: (e: React.MouseEvent) => void;
+  onManageCookiePreferences?: () => void;
 }
 
 function TikTokIcon({ className }: { className?: string }) {
@@ -19,7 +23,7 @@ function TikTokIcon({ className }: { className?: string }) {
   );
 }
 
-export default function Footer({ t }: FooterProps) {
+export default function Footer({ t, onNavigatePrivacy, onManageCookiePreferences }: FooterProps) {
   // SOCIAL PLACEHOLDERS: Replace "#" below with your actual social handle profiles
   const socials = [
     {
@@ -81,8 +85,38 @@ export default function Footer({ t }: FooterProps) {
 
         </div>
 
+        {/* Privacy & Data Protection Row (PDPL) */}
+        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-x-6 gap-y-3 pt-8 pb-2 text-xs font-sans font-semibold text-white/70">
+          <a
+            href="/privacy-policy"
+            onClick={onNavigatePrivacy}
+            className="hover:text-white underline underline-offset-2 transition-colors"
+          >
+            {t.footerPrivacyLink}
+          </a>
+
+          <button
+            onClick={onManageCookiePreferences}
+            className="hover:text-white underline underline-offset-2 transition-colors cursor-pointer bg-transparent"
+          >
+            {t.footerCookiePrefsLink}
+          </button>
+
+          <span className="flex items-center gap-1.5">
+            <Mail className="h-3.5 w-3.5" />
+            <span>{t.footerPrivacyEmailLabel}</span>
+            <a
+              href={`mailto:${PRIVACY_EMAIL}`}
+              dir="ltr"
+              className="text-brand-pink-300 hover:text-white transition-colors"
+            >
+              {PRIVACY_EMAIL}
+            </a>
+          </span>
+        </div>
+
         {/* Bottom Credits & Copyright */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-center text-xs text-white/50 font-sans font-semibold">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-center text-xs text-white/50 font-sans font-semibold">
           <p>
             {t.footerCopyright}
           </p>

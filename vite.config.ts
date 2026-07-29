@@ -17,6 +17,14 @@ export default defineConfig(() => {
       hmr: process.env.DISABLE_HMR !== 'true',
       // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
+      // Forward API calls to the local Express server (npm run server) so the
+      // contact form works against server.js during `npm run dev` too.
+      proxy: {
+        '/api': {
+          target: `http://localhost:${process.env.PORT || 3001}`,
+          changeOrigin: true,
+        },
+      },
     },
   };
 });

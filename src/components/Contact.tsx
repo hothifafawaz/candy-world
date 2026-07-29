@@ -13,11 +13,13 @@ interface ContactProps {
   t: TranslationSet;
   inquiryMessage: string;
   setInquiryMessage: (text: string) => void;
+  onNavigatePrivacy?: (e: React.MouseEvent) => void;
 }
 
-export default function Contact({ lang, t, inquiryMessage, setInquiryMessage }: ContactProps) {
+export default function Contact({ lang, t, inquiryMessage, setInquiryMessage, onNavigatePrivacy }: ContactProps) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [consent, setConsent] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
@@ -38,24 +40,25 @@ export default function Contact({ lang, t, inquiryMessage, setInquiryMessage }: 
 
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
-  if (!name.trim() || !phone.trim() || !inquiryMessage.trim()) return;
+  if (!name.trim() || !phone.trim() || !inquiryMessage.trim() || !consent) return;
 
   setIsSubmitting(true);
 
   try {
-    const response = await fetch('https://api.web3forms.com/submit', {
+    // Submitted to our own backend (server.js), which holds the Web3Forms
+    // API key server-side and forwards the request - the key is never
+    // exposed in client-side code.
+    const response = await fetch('/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
       body: JSON.stringify({
-        access_key: '31972bc6-433d-4acf-a878-35f9f67e6881',
-        subject: 'New Inquiry - Candy World Website',
-        from_name: 'Candy World Website',
         name: name,
         phone: phone,
         message: inquiryMessage,
+        consent: consent,
       }),
     });
 
@@ -65,6 +68,7 @@ export default function Contact({ lang, t, inquiryMessage, setInquiryMessage }: 
       setIsSubmitted(true);
       setName('');
       setPhone('');
+      setConsent(false);
     } else {
       alert(lang === 'ar' ? 'حدث خطأ، حاول مرة أخرى.' : 'Something went wrong, please try again.');
     }
@@ -176,12 +180,35 @@ export default function Contact({ lang, t, inquiryMessage, setInquiryMessage }: 
                     />
                   </div>
 
+                  {/* PDPL Consent Checkbox */}
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="consent"
+                      required
+                      checked={consent}
+                      onChange={(e) => setConsent(e.target.checked)}
+                      className="mt-1 h-4 w-4 shrink-0 accent-brand-pink-600 cursor-pointer"
+                    />
+                    <label htmlFor="consent" className="font-sans text-xs sm:text-sm text-brand-choco-800/80 leading-relaxed cursor-pointer">
+                      {t.contactConsentPrefix}{' '}
+                      <a
+                        href="/privacy-policy"
+                        onClick={onNavigatePrivacy}
+                        className="font-bold text-brand-pink-600 hover:text-brand-pink-700 underline underline-offset-2 transition-colors"
+                      >
+                        {t.contactConsentLinkText}
+                      </a>
+                      {t.contactConsentSuffix}
+                    </label>
+                  </div>
+
                   {/* Submit buttons */}
                   <div className="flex flex-col sm:flex-row gap-4 pt-2">
                     <button
                       type="submit"
-                      disabled={isSubmitting}
-                      className="flex-1 bg-brand-pink-600 hover:bg-brand-pink-700 disabled:bg-brand-pink-300 text-white font-sans font-bold py-4 rounded-2xl transition-all shadow-md shadow-brand-pink-500/10 cursor-pointer flex items-center justify-center gap-2.5 active:scale-98"
+                      disabled={isSubmitting || !consent}
+                      className="flex-1 bg-brand-pink-600 hover:bg-brand-pink-700 disabled:bg-brand-pink-300 disabled:cursor-not-allowed text-white font-sans font-bold py-4 rounded-2xl transition-all shadow-md shadow-brand-pink-500/10 cursor-pointer flex items-center justify-center gap-2.5 active:scale-98"
                     >
                       {isSubmitting ? (
                         <span className="h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>

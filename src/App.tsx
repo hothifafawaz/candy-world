@@ -18,6 +18,10 @@ import WhyChooseUs from './components/WhyChooseUs';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import CookieConsent from './components/CookieConsent';
+
+const ANALYTICS_CONSENT_KEY = 'analytics-consent';
 
 export default function App() {
   // Arabic is the primary language, English secondary
@@ -32,6 +36,52 @@ export default function App() {
     }
   });
   const [inquiryMessage, setInquiryMessage] = useState<string>('');
+
+  // Lightweight client-side routing (no router dependency): only the
+  // Privacy Policy page needs its own path, everything else is one page.
+  const [route, setRoute] = useState<string>(() => window.location.pathname);
+
+  useEffect(() => {
+    const onPopState = () => setRoute(window.location.pathname);
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
+  const navigate = (path: string) => {
+    window.history.pushState({}, '', path);
+    setRoute(path);
+    window.scrollTo(0, 0);
+  };
+
+  const handleNavLinkClick = (path: string) => (e: React.MouseEvent) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    navigate(path);
+  };
+
+  // Cookie / tracking consent: Vercel Analytics only loads after explicit
+  // opt-in, stored in localStorage so the choice persists across visits.
+  const [analyticsConsent, setAnalyticsConsent] = useState<'accepted' | 'rejected' | null>(() => {
+    try {
+      const saved = localStorage.getItem(ANALYTICS_CONSENT_KEY);
+      return saved === 'accepted' || saved === 'rejected' ? saved : null;
+    } catch (err) {
+      return null;
+    }
+  });
+
+  const setConsent = (value: 'accepted' | 'rejected' | null) => {
+    setAnalyticsConsent(value);
+    try {
+      if (value) {
+        localStorage.setItem(ANALYTICS_CONSENT_KEY, value);
+      } else {
+        localStorage.removeItem(ANALYTICS_CONSENT_KEY);
+      }
+    } catch (err) {
+      // ignore
+    }
+  };
 
   // Sync HTML attributes for bidirectional RTL/LTR support and font accessibility
   useEffect(() => {
@@ -58,16 +108,39 @@ export default function App() {
 
   const t = translations[lang];
 
+  if (route === '/privacy-policy') {
+    return (
+      <>
+        <PrivacyPolicy
+          lang={lang}
+          t={t}
+          toggleLang={toggleLang}
+          onNavigateHome={() => navigate('/')}
+          onManageCookiePreferences={() => setConsent(null)}
+        />
+        <Footer t={t} onNavigatePrivacy={handleNavLinkClick('/privacy-policy')} onManageCookiePreferences={() => setConsent(null)} />
+        <CookieConsent
+          lang={lang}
+          t={t}
+          visible={analyticsConsent === null}
+          onAccept={() => setConsent('accepted')}
+          onReject={() => setConsent('rejected')}
+          onNavigatePrivacy={handleNavLinkClick('/privacy-policy')}
+        />
+      </>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col font-sans select-none antialiased selection:bg-brand-pink-100 selection:text-brand-pink-800">
-      <Analytics />
-      
+      {analyticsConsent === 'accepted' && <Analytics />}
+
       {/* 1. Navbar / Header */}
       <Navbar lang={lang} t={t} toggleLang={toggleLang} />
 
       {/* Main Content Sections */}
       <main className="flex-grow">
-        
+
         {/* 2. Hero Section */}
         <Hero lang={lang} t={t} onInquire={handleInquire} />
 
@@ -87,17 +160,28 @@ export default function App() {
         <Gallery lang={lang} t={t} />
 
         {/* 8. Contact & Inquiry Form Section with Map */}
-        <Contact 
-          lang={lang} 
-          t={t} 
-          inquiryMessage={inquiryMessage} 
-          setInquiryMessage={setInquiryMessage} 
+        <Contact
+          lang={lang}
+          t={t}
+          inquiryMessage={inquiryMessage}
+          setInquiryMessage={setInquiryMessage}
+          onNavigatePrivacy={handleNavLinkClick('/privacy-policy')}
         />
 
       </main>
 
       {/* 9. Brand Footer */}
-      <Footer t={t} />
+      <Footer t={t} onNavigatePrivacy={handleNavLinkClick('/privacy-policy')} onManageCookiePreferences={() => setConsent(null)} />
+
+      {/* Cookie / tracking consent banner (PDPL) */}
+      <CookieConsent
+        lang={lang}
+        t={t}
+        visible={analyticsConsent === null}
+        onAccept={() => setConsent('accepted')}
+        onReject={() => setConsent('rejected')}
+        onNavigatePrivacy={handleNavLinkClick('/privacy-policy')}
+      />
 
     </div>
   );
