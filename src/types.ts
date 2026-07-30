@@ -99,7 +99,6 @@ export interface TranslationSet {
   footerCopyright: string;
   footerRights: string;
   footerPrivacyLink: string;
-  footerPrivacyWhatsAppLabel: string;
   footerCookiePrefsLink: string;
 
   // Contact form - consent checkbox

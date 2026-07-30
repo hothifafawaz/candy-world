@@ -7,8 +7,6 @@ import React from 'react';
 import { Candy, Instagram, Ghost, MessageCircle, Twitter } from 'lucide-react';
 import { TranslationSet } from '../types';
 
-const PRIVACY_WHATSAPP = '966509607675';
-
 interface FooterProps {
   t: TranslationSet;
   onNavigatePrivacy?: (e: React.MouseEvent) => void;
@@ -101,20 +99,6 @@ export default function Footer({ t, onNavigatePrivacy, onManageCookiePreferences
           >
             {t.footerCookiePrefsLink}
           </button>
-
-          <span className="flex items-center gap-1.5">
-            <MessageCircle className="h-3.5 w-3.5" />
-            <span>{t.footerPrivacyWhatsAppLabel}</span>
-            <a
-              href={`https://wa.me/${PRIVACY_WHATSAPP}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              dir="ltr"
-              className="text-brand-pink-300 hover:text-white transition-colors"
-            >
-              +966 50 960 7675
-            </a>
-          </span>
         </div>
 
         {/* Bottom Credits & Copyright */}

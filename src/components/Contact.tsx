@@ -45,9 +45,9 @@ export default function Contact({ lang, t, inquiryMessage, setInquiryMessage, on
   setIsSubmitting(true);
 
   try {
-    // Submitted to our own backend (server.js), which holds the Web3Forms
-    // API key server-side and forwards the request - the key is never
-    // exposed in client-side code.
+    // Submitted to our own backend (api/contact.js in production, server.js
+    // locally), which holds the Resend API key server-side and forwards the
+    // request - the key is never exposed in client-side code.
     const response = await fetch('/api/contact', {
       method: 'POST',
       headers: {

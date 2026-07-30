@@ -100,7 +100,6 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
     footerCopyright: 'جميع الحقوق محفوظة © ٢٠٢٦ لعالم الحلويات الأولى (Candy World).',
     footerRights: 'صمم بكل حب وسكر 🍬',
     footerPrivacyLink: 'سياسة الخصوصية',
-    footerPrivacyWhatsAppLabel: 'لطلبات الخصوصية وبياناتك الشخصية:',
     footerCookiePrefsLink: 'تفضيلات ملفات تعريف الارتباط',
 
     // Contact form - consent checkbox
@@ -110,7 +109,7 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
 
     // Cookie / tracking consent banner
     cookieBannerTitle: '🍪 نستخدم بيانات تحليلية',
-    cookieBannerMessage: 'نستخدم أداة Vercel Analytics لفهم كيفية استخدام الزوار لموقعنا وتحسين تجربتهم. يتم إرسال هذه البيانات إلى مزود الخدمة خارج المملكة العربية السعودية. يمكنك قبول ذلك أو رفضه، ولن يؤثر اختيارك على استخدامك للموقع أو نموذج التواصل.',
+    cookieBannerMessage: 'نستخدم أدوات تحليلية لفهم كيفية استخدام الزوار لموقعنا وتحسين تجربتهم. يمكنك قبول ذلك أو رفضه، ولن يؤثر اختيارك على استخدامك للموقع أو نموذج التواصل.',
     cookieBannerAccept: 'موافقة',
     cookieBannerReject: 'رفض',
     cookieBannerPolicyLinkText: 'اطّلع على سياسة الخصوصية',
@@ -242,7 +241,6 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
     footerCopyright: 'All Rights Reserved © 2026 Candy World (عالم الحلويات الأولى).',
     footerRights: 'Crafted with Love & Sugar 🍬',
     footerPrivacyLink: 'Privacy Policy',
-    footerPrivacyWhatsAppLabel: 'For privacy requests about your data:',
     footerCookiePrefsLink: 'Cookie Preferences',
 
     // Contact form - consent checkbox
@@ -252,7 +250,7 @@ export const translations: Record<'ar' | 'en', TranslationSet> = {
 
     // Cookie / tracking consent banner
     cookieBannerTitle: '🍪 We use analytics data',
-    cookieBannerMessage: 'We use Vercel Analytics to understand how visitors use our site and to improve their experience. This data is sent to a service provider outside Saudi Arabia. You can accept or reject this, and your choice will not affect your ability to use the site or the contact form.',
+    cookieBannerMessage: 'We use analytics tools to understand how visitors use our website and to improve their experience. You can accept or decline this, and your choice won\'t affect your ability to use the site or the contact form.',
     cookieBannerAccept: 'Accept',
     cookieBannerReject: 'Reject',
     cookieBannerPolicyLinkText: 'Read our Privacy Policy',

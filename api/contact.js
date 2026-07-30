@@ -3,19 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// Candy World backend: keeps third-party API keys server-side (PDPL compliance)
-// and serves the built frontend, including client-side routes like /privacy-policy.
-
-import 'dotenv/config';
-import express from 'express';
-import path from 'path';
-import { fileURLToPath } from 'url';
+// Vercel Serverless Function (auto-detected from the /api directory, zero config).
+// This is the production entry point for /api/contact - server.js's Express
+// route of the same name is for local development only (npm run server),
+// since the site is deployed on Vercel and does not run server.js.
 import { Resend } from 'resend';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const app = express();
-
-app.use(express.json());
 
 // TODO: swap for an address on a verified custom domain (e.g. candyworldsa.com)
 // once one is verified on the Resend account. Until then, Resend's shared
@@ -23,7 +15,12 @@ app.use(express.json());
 const FROM_ADDRESS = 'Candy World Website <onboarding@resend.dev>';
 const TO_ADDRESS = 'hothifafawaz1@gmail.com';
 
-app.post('/api/contact', async (req, res) => {
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    res.setHeader('Allow', 'POST');
+    return res.status(405).json({ success: false, message: 'Method not allowed.' });
+  }
+
   const { name, phone, message, consent } = req.body || {};
 
   if (!name || !phone || !message) {
@@ -57,22 +54,9 @@ app.post('/api/contact', async (req, res) => {
       return res.status(502).json({ success: false, message: 'Upstream submission failed.' });
     }
 
-    return res.json({ success: true });
+    return res.status(200).json({ success: true });
   } catch (error) {
     console.error('Contact form submission failed:', error);
     return res.status(502).json({ success: false, message: 'Upstream submission failed.' });
   }
-});
-
-// Serve the built frontend in production and fall back to index.html
-// for client-side routes (e.g. /privacy-policy) on direct navigation/refresh.
-const distPath = path.join(__dirname, 'dist');
-app.use(express.static(distPath));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(distPath, 'index.html'));
-});
-
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Candy World server listening on port ${PORT}`);
-});
+}
